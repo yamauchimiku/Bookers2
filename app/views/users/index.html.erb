@@ -6,7 +6,8 @@
       <%= attachment_image_tag @user, :profile_image, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg" %>
       <% if @user.id == current_user.id %>
      <table class="table">
-     <tbody><tr></tr>
+     <tbody>
+      <tr></tr>
       <tr>
 	     <th>name</th>
 	     <th><%= @user.name %></th>
@@ -15,7 +16,8 @@
 	     <th>introduction</th>
 	     <th><%= @user.introduction %></th>
       </tr>
-     </tbody></table>
+     </tbody>
+     </table>
      <p><%= link_to "",edit_user_path(@user), class:"btn btn-outline-secondary btn-block fas fa-user-cog" %></p>
      <% end %>
 
@@ -30,6 +32,7 @@
 
       <%= f.submit 'Create Book', class: "btn btn-success" %>
      <% end %>
+
  </div>
 
 <div class="col-md-8 offset-md-1">
@@ -47,7 +50,7 @@
     <tr>
       <td><%= attachment_image_tag user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg"%></td>
       <td><%= user.name%></td>
-      <td><%= link_to "Show", user_path(@user)%></td>
+      <td><%= link_to "Show", user_path(user)%></td>
     </tr>
     <% end %>
      </tbody>
